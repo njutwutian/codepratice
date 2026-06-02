@@ -1,8 +1,13 @@
 import { runTwoSum, twoSumTestCases } from "../problems/two-sum";
+import {
+  runClimbStairs,
+  testCasesData as climbStairsTestCases
+} from "../problems/climb-stairs";
 
 const main = (): void => {
   const problemRunners: Record<string, () => unknown> = {
-    "two-sum": () => runTwoSum(twoSumTestCases[0])
+    "two-sum": () => runTwoSum(twoSumTestCases[0]),
+    "climb-stairs": () => runClimbStairs(climbStairsTestCases[1]),
   };
 
   const inputProblemName = process.argv[2] ?? "two-sum";
