@@ -17,13 +17,14 @@ if (fs.existsSync(targetFile)) {
   process.exit(1);
 }
 
-const content = `export type ${toPascalCase(problemName)}TestCase = {
-  input: {
-    nums: number[];
-    target: number;
-  };
-  expected: [number, number];
-};
+const content = `// Problem: ${problemName}
+// export type ${toPascalCase(problemName)}TestCase = {
+//   input: {
+//     nums: number[];
+//     target: number;
+//   };
+//   expected: [number, number];
+// };
 
 // 1) Source code
 export const ${toCamelCase(problemName)} = (nums: number[], target: number): [number, number] => {
@@ -45,22 +46,22 @@ export const ${toCamelCase(problemName)} = (nums: number[], target: number): [nu
 };
 
 // 2) Configure test parameters
-export const ${toCamelCase(problemName)}TestCases: ${toPascalCase(problemName)}TestCase[] = [
-  { input: { nums: [2, 7, 11, 15], target: 9 }, expected: [0, 1] }
-];
+// export const ${toCamelCase(problemName)}TestCases: ${toPascalCase(problemName)}TestCase[] = [
+//   { input: { nums: [2, 7, 11, 15], target: 9 }, expected: [0, 1] }
+// ];
 
 // 3) Run function
-export const run${toPascalCase(problemName)} = (
-  testCase: ${toPascalCase(problemName)}TestCase = ${toCamelCase(problemName)}TestCases[0]
-): [number, number] => {
-  const { nums, target } = testCase.input;
-  const result = ${toCamelCase(problemName)}(nums, target);
+// export const run${toPascalCase(problemName)} = (
+//   testCase: ${toPascalCase(problemName)}TestCase = ${toCamelCase(problemName)}TestCases[0]
+// ): [number, number] => {
+//   const { nums, target } = testCase.input;
+//   const result = ${toCamelCase(problemName)}(nums, target);
 
-  console.log("input:", testCase.input);
-  console.log("result:", result, "expected:", testCase.expected);
+//   console.log("input:", testCase.input);
+//   console.log("result:", result, "expected:", testCase.expected);
 
-  return result;
-};
+//   return result;
+// };
 `;
 
 fs.mkdirSync(problemsDir, { recursive: true });

@@ -9,7 +9,7 @@ const target: MockTargetDefinition = {
     const [count, setCount] = React.useState(0);
     return (
       <article className="mock-card count-card">
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+        <div style={{ display: "flex", flexDirection: "column"}}>
           <div>
             <p className="chip">Count Summary</p>
           </div>
