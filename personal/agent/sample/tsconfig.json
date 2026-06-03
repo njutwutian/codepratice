@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* 项目结构 */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* 模块解析 —— 使用 Node.js 原生 ES Module */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",                // 足够支持顶层 await、fetch 等
+    "lib": ["ES2022"],                 // 包含 Promise、fetch、AsyncIterable 等类型
+
+    /* 输出配置 */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* 类型检查增强（推荐 Agent 开发） */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* 与构建工具/运行时兼容 */
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,     // 不强制严格模块语法，允许灵活转换
+    "moduleDetection": "force",        // 强制所有文件视为模块
+    "noUncheckedSideEffectImports": true,
+    "skipLibCheck": true,
+
+    /* Node.js 类型支持（需安装 @types/node） */
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
