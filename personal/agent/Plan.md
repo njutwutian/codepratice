@@ -1,13 +1,13 @@
 # Agent学习开发计划
+
 ## Single Agent
-### 单个Agent
+
+### To-do
 - [x] 实现与大模型的连接
 - [x] 实现流式输出
-- 当前状态：
 - [x] 已接入 Ollama 请求链路，入口在 [sample/src/index.ts](sample/src/index.ts)
 - [x] 当前默认走流式对话 `userStartTalkByStream`
 - [x] 已有基础配置加载，配置定义在 [sample/src/config/config.ts](sample/src/config/config.ts)
-- 下一步重点：
 - [ ] 完善 token 统计口径
 - [ ] 补齐请求/响应类型
 - [ ] 修复流式响应解析稳定性

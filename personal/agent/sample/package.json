@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "dev:dev": "cross-env NODE_ENV=dev tsx src/index.ts",
+    "dev:dev1": "cross-env NODE_ENV=dev1 tsx src/index.ts",
     "dev:test": "cross-env NODE_ENV=test tsx src/index.ts",
     "start": "npm run build && node dist/index.js",
     "start:dev": "cross-env NODE_ENV=dev npm run start",
