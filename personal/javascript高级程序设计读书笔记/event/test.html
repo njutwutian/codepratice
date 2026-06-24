@@ -1,0 +1,33 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="root">
+           <div>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+           </div>
+           <div>
+                <button>button1</button>
+                <button>button2</button>
+           </div>
+        </div>
+        <script>
+            console.log("init");
+            document.getElementById("root").addEventListener("click", (a, b) => {
+                console.log(JSON.stringify(a), " element");
+                console.log(a.target, " target");
+                console.log(a.currentTarget, " currentTarget");
+                if (a.target.tagName === "BUTTON") {
+                    console.log("button clicked");
+                }
+                console.log(b);
+            });
+        </script>
+    </body>
+</html>
