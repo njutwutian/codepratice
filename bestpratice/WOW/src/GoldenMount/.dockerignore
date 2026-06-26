@@ -1,0 +1,5 @@
+target/
+.git/
+.idea/
+*.log
+prompts/TASK_PROMPT.md

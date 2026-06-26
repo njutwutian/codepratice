@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: golden-mount
+  profiles:
+    default: dev
+  jackson:
+    time-zone: Asia/Shanghai
+  mvc:
+    problemdetails:
+      enabled: false
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+server:
+  port: ${APP_PORT:8080}

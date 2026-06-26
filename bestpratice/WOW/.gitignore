@@ -1,0 +1,27 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Local runtime data
+/data/mysql/
+
+# SecretPalace generated artifacts
+/src/SecretPalace/dist/
+/src/SecretPalace/reports/
+/src/SecretPalace/failures/
+/src/SecretPalace/.temp/
+
+# Node artifacts (fallback for nested projects)
+**/node_modules/
+
+# Env files
+.env
+.env.*
+!.env.example

@@ -1,0 +1,68 @@
+{
+  "target": {
+    "url": "http://localhost:8080/api/v1/events",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-source": "SecretPalace"
+    },
+    "timeoutMs": 5000
+  },
+  "run": {
+    "durationMs": 300000,
+    "ratePerSecond": 50,
+    "quota": 100000,
+    "concurrency": 50,
+    "maxConcurrency": 1000,
+    "maxRetries": 2,
+    "retryBaseDelayMs": 200,
+    "seed": 20260626,
+    "requestTimeoutMs": 5000
+  },
+  "generator": {
+    "templatePath": "templates/event-template.json",
+    "strategies": {
+      "requestId": {
+        "type": "requestId",
+        "prefix": "REQ",
+        "width": 6
+      },
+      "sourceCode": {
+        "type": "string",
+        "value": "SIMULATOR_A"
+      },
+      "eventType": {
+        "type": "pick",
+        "values": ["DEVICE_STATUS", "DEVICE_METRIC", "DEVICE_ALERT"]
+      },
+      "eventStatus": {
+        "type": "pick",
+        "values": ["RECEIVED", "PROCESSING", "COMPLETED", "FAILED"]
+      },
+      "eventTime": {
+        "type": "nowOffsetIso",
+        "offset": "+08:00"
+      },
+      "payloadCount": {
+        "type": "int",
+        "min": 1,
+        "max": 50
+      },
+      "payloadSummary": {
+        "type": "pick",
+        "values": [
+          "device telemetry batch uploaded",
+          "status heartbeat batch uploaded",
+          "alert snapshot batch uploaded"
+        ]
+      }
+    },
+    "staticFields": {}
+  },
+  "storage": {
+    "failedEventsPath": "failures/failed-events.jsonl"
+  },
+  "report": {
+    "outputDir": "reports"
+  }
+}

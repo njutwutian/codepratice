@@ -1,0 +1,9 @@
+{
+  "requestId": "{{requestId}}",
+  "sourceCode": "{{sourceCode}}",
+  "eventType": "{{eventType}}",
+  "eventStatus": "{{eventStatus}}",
+  "eventTime": "{{eventTime}}",
+  "payloadCount": "{{payloadCount}}",
+  "payloadSummary": "{{payloadSummary}}"
+}

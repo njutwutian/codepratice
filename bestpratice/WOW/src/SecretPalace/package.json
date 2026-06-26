@@ -1,0 +1,25 @@
+{
+  "name": "secret-palace-simulator",
+  "version": "0.1.0",
+  "description": "SecretPalace Node.js data simulator for API v1 testing",
+  "main": "dist/cli.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "npm run build && node dist/cli.js run",
+    "start": "npm run build && node dist/cli.js run",
+    "hyper": "npm run build && node dist/cli.js run --config config/hyper.json --no-interactive",
+    "dry-run": "npm run build && node dist/cli.js run --dry-run",
+    "replay": "npm run build && node dist/cli.js replay"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "config": "^3.3.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.31",
+    "typescript": "^5.8.3"
+  }
+}
